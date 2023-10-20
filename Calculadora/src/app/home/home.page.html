@@ -5,13 +5,13 @@
     <ion-item></ion-item>
     <ion-item></ion-item>
     <ion-item>
-      <ion-input [(ngModel)]="visor"></ion-input>
+      <ion-input [(ngModel)]="visor" readonly></ion-input>
     </ion-item>
     <ion-item>
       <ion-fab-button class="operacao2" (click)="zerar()">
         AC
       </ion-fab-button>
-      <ion-fab-button class="operacao2">
+      <ion-fab-button class="operacao2" (click)="adicionarOperacao(5)">
        +/-
       </ion-fab-button>
       <ion-fab-button class="operacao2" (click)="adicionarOperacao(4)">

@@ -1,18 +1,20 @@
-ion-list{
+ion-list {
   height: 100%;
 }
 
-ion-item{
-  margin: 0 auto;
+ion-item {
+  text-align: right; // Alinhar os números da direita para a esquerda
 }
 
-ion-input{
-  font-size: 50pt;
-  text-align: right;
-  margin-right: 7%;
+.visor-inferior {
+  font-size: 36pt; // Aumentar o tamanho do resultado
 }
 
-ion-fab-button{
+ion-input {
+  display: none; // Ocultar o ion-input
+}
+
+ion-fab-button {
   width: 20%;
   margin: 0 auto;
   margin-top: 3%;
@@ -22,18 +24,28 @@ ion-fab-button{
   --background-activated: #333333;
 }
 
-.operacao{
+.operacao {
   --background: #ff9f0c;
   --background-activated: #ff9f0c;
 }
 
-.operacao2{
+.operacao2 {
   --background: #a5a5a5;
   --background-activated: #a5a5a5;
   --color: #050505;
 }
 
-#zero{
+#zero {
   width: 45%;
   height: 90%;
+  margin: 3% auto;
+  font-size: 20pt;
+  background-color: #333333;
+  color: white;
+  border-radius: 50%;
+  --background-activated: #1f1f1f;
+}
+
+#zero:hover {
+  background-color: #1f1f1f;
 }

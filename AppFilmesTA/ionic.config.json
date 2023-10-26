@@ -1,0 +1,7 @@
+{
+  "name": "AppFilmesTA",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

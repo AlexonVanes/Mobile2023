@@ -17,5 +17,7 @@ export class MovieDetailsPage implements OnInit {
     let id = this.actRoute.snapshot.paramMap.get('id')
     this.omdbapi.getById(id).subscribe(result => this.info = result)
   }
-
+  openURL() {
+    window.open(this.info.Website, '_blank');
+  }
 }

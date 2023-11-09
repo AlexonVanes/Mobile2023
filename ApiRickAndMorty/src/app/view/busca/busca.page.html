@@ -1,0 +1,34 @@
+<!-- busca.page.html -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Busca</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar [(ngModel)]="searchTerms" (ionChange)="search()"></ion-searchbar>
+
+  <ion-segment [(ngModel)]="type" (ionChange)="search()">
+    <ion-segment-button value="character">
+      Personagem
+    </ion-segment-button>
+    <ion-segment-button value="episode">
+      Episódio
+    </ion-segment-button>
+  </ion-segment>
+  <ion-list>
+    <ion-item *ngFor="let item of result | async" [routerLink]="['/', 'busca-details', type, item.id]"    >
+      <ion-avatar slot="start">
+        <img *ngIf="item.image" [src]="item.image" alt="Avatar">
+      </ion-avatar>
+      <ion-label *ngIf="item.name">Nome: {{ item.name }}</ion-label>
+      <ion-label *ngIf="item.status">Status: {{ item.status }}</ion-label>
+      <ion-label *ngIf="type === 'episode'">Episódio: {{ item.episode }}</ion-label>
+    </ion-item>
+  </ion-list>
+  
+  
+  
+  
+  
+</ion-content>

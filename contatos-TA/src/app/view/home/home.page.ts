@@ -23,7 +23,9 @@ export class HomePage {
             ... contato.payload.doc.data() as any
           }as Contato;
         })
+        console.log(this.lista_contatos)
       })
+
     }
 
 

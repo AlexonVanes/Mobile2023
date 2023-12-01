@@ -1,0 +1,61 @@
+<ion-content [fullscreen]="true">
+
+  <ion-header [translucent]="true">
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button defaultHref="/filmes"></ion-back-button>
+      </ion-buttons>
+      <ion-title>Cadastrar  Filme</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+  <ion-grid>
+  
+    <ion-row>
+      <ion-col size="12">
+        <ion-item>
+          <ion-input placeholder="Digite o Título" label="Título  do Filme" [(ngModel)]="titulo"></ion-input>
+        </ion-item>
+      </ion-col>
+      
+      <ion-col size="12">
+        <ion-item>
+          
+          <ion-input type="number" placeholder="Ex: 2023" label="Ano de Lançamento"[(ngModel)]="anoLancamento"></ion-input>
+        </ion-item>
+      </ion-col>
+      
+      <ion-col size="12">
+        <ion-item>
+          <ion-input placeholder="Ex: Ação" label="Gênero"[(ngModel)]="genero"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-item>
+          <ion-input type="number" placeholder="Ex: 120" label="Duração" [(ngModel)]="duracao"></ion-input>
+        </ion-item>
+      </ion-col>
+
+      <ion-col size="12">
+        <ion-item>
+          <ion-select label="Avaliação" placeholder="Sua avaliação sobre o filme" [(ngModel)]="avaliacao">
+            <ion-select-option value="Bom">Bom</ion-select-option>
+            <ion-select-option value="Mediano">Mediano</ion-select-option>
+            <ion-select-option value="Ruim">Ruim</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-item>
+        <ion-button size="default"  color="dark" shape="round">
+          <input type="file" (change)="uploadImagem($event.target)"/>
+        </ion-button>
+      </ion-item>
+
+      <ion-col size="12">
+        <ion-button expand="block" (click)="cadastrar()">Cadastrar</ion-button>
+      </ion-col>
+
+    </ion-row>
+  </ion-grid>
+</ion-content>

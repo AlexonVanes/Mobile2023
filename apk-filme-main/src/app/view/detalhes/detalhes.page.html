@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/filmes"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Detalhes do Filme</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content [fullscreen]="true">
+  <ion-label>Editar</ion-label>
+  <ion-col size="9">
+    <ion-toggle (ionChange)="habilitar()"></ion-toggle>
+    <ion-item>
+      <ion-input label="Título: " [(ngModel)]="titulo" [disabled]="edicao"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Genêro: " [(ngModel)]="genero" [disabled]="edicao"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Ano de Lançamento: " [(ngModel)]="anoLancamento" [disabled]="edicao"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-input label="Duração: " [(ngModel)]="duracao" [disabled]="edicao"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-select label="Avaliação: " placeholder="Sua avaliação sobre o filme" [(ngModel)]="avaliacao"
+        [disabled]="edicao">
+        <ion-select-option value="Bom">Bom</ion-select-option>
+        <ion-select-option value="Mediano">Mediano</ion-select-option>
+        <ion-select-option value="Ruim">Ruim</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-item disabled="{{edicao}}">
+      <img src="{{filme.downloadURL}}" />
+    </ion-item>
+    <ion-item disabled="{{edicao}}">
+      <ion-button size="default" color="dark" shape="round">
+        <input type="file" (change)="uploadImagem($event.target)" />
+      </ion-button>
+    </ion-item>
+    <ion-button expand="block" (click)="editar()" disabled="{{edicao}}" >Salvar</ion-button>
+    <ion-button expand="block" (click)="excluir()" disabled="{{edicao}}" color="danger">Excluir</ion-button>

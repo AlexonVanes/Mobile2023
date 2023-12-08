@@ -8,6 +8,7 @@
 
 <ion-content>
 
+  <ion-button (click)="logout()">SAIR</ion-button>
   <ion-list *ngFor="let contato of lista_contatos">
     <ion-item (click)="editar(contato)">
       <ion-avatar *ngIf="contato.downloadURL != null">

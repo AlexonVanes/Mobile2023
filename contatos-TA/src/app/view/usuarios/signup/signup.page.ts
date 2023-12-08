@@ -33,6 +33,10 @@ export class SignupPage implements OnInit {
       this.presentAlert.presentAlert("Erro", "Erro ao preencher o forumulario")
       return false;
     }else{
+      if(this.formCadastrar.value['senha'] != this.formCadastrar.value['confSenha']){
+        this.presentAlert.presentAlert("Erro", "As senhas nao conferem")
+        return false
+      }
       this.cadastrar();
       return true
     }

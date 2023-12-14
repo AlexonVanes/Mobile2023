@@ -34,6 +34,7 @@ export class SigninPage implements OnInit {
       this.presentAlert.presentAlert("Erro", "Erro ao preencher o forumulatio")
       return false;
     }else{
+      this.presentAlert.simpleLoader()
       this.logar();
       return true
     }
@@ -41,6 +42,7 @@ export class SigninPage implements OnInit {
   private logar(){
     this.authService.signIn(this.formLogar.value['email'],
     this.formLogar.value['senha']).then((res)=>{
+      this.presentAlert.dismissLoader()
       this.presentAlert.presentAlert("Login", "Login realizado com sucesso")
       this.router.navigate(["home"]);
     }).catch((error)=>{
